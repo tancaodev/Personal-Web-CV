@@ -33,16 +33,6 @@ const Wrapper = styled.div`
 
 function App() {
   return (
-    // <div className='w-full h-[100dvh]' >
-    //   <div className='h-16'></div>
-    //   <Navbar />
-    //   <Routes>
-    //     <Route path='/' element={<Home />} />
-    //     <Route path='/about-me' element={<About />} />
-    //     <Route path='/projects' element={<Projects />} />
-    //     <Route path='/contact-me' element={<ContactMe />} />
-    //   </Routes>
-    // </div>
     <ThemeProvider theme={darkTheme}>
       <Router>
         <Navbar />

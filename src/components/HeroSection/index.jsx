@@ -33,7 +33,7 @@ const HeroBackground = styled.div`
   bottom: 0;
   left: 50%;
   overflow: hidden;
-  width: 55%;
+  width: 90%;
   height: 100%;
   padding: 0 30px;
   -webkit-transform: translateX(-50%) translateY(-50%);
