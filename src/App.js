@@ -8,6 +8,7 @@ import HeroSection from './components/HeroSection';
 import Skills from './components/Skills';
 import Education from './components/Education';
 import Navbar from './components/Navbar';
+import Experience from './components/Experience';
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -40,6 +41,7 @@ function App() {
           <HeroSection />
           <Wrapper>
             <Skills />
+            <Experience />
             <Education />
           </Wrapper>
         </Body>
