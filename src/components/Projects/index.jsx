@@ -1,24 +1,33 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import ProjectCard from '../Cards/ProjectCard';
+import { projects } from '../../data/constants';
 
 const Container = styled.div`
+  background: linear-gradient(
+    343.07deg,
+    rgba(132, 59, 206, 0.06) 5.71%,
+    rgba(132, 59, 206, 0) 64.83%
+  );
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   z-index: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 98%, 0 100%);
 `;
 
 const Wrapper = styled.div`
   display: flex;
-  max-width: 1100px;
+  max-width: 1350px;
   position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   gap: 12px;
+  padding: 10px 0px 100px 0;
 `;
 
 const Title = styled.div`
@@ -81,6 +90,14 @@ const Divider = styled.div`
   background-color: ${({ theme }) => theme.primary};
 `;
 
+const CardContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+`;
+
 const Projects = () => {
   const [toggle, setToggle] = useState('all');
 
@@ -95,20 +112,53 @@ const Projects = () => {
 
         <ToggleGroup>
           {toggle === 'all' ? (
-            <ToggleButton active value='all'>
+            <ToggleButton active value='all' onClick={() => setToggle('all')}>
               ALL
             </ToggleButton>
           ) : (
-            <ToggleButton>ALL</ToggleButton>
+            <ToggleButton onClick={() => setToggle('all')}>ALL</ToggleButton>
           )}
           <Divider />
-          <ToggleButton>WEB APP'S</ToggleButton>
+          {toggle === 'web app' ? (
+            <ToggleButton active onClick={() => setToggle('web app')}>
+              WEB APP'S
+            </ToggleButton>
+          ) : (
+            <ToggleButton onClick={() => setToggle('web app')}>
+              WEB APP'S
+            </ToggleButton>
+          )}
           <Divider />
-          <ToggleButton>ANDROID APP'S</ToggleButton>
+          {toggle === 'android app' ? (
+            <ToggleButton active onClick={() => setToggle('android app')}>
+              ANDROID APP'S
+            </ToggleButton>
+          ) : (
+            <ToggleButton onClick={() => setToggle('android app')}>
+              ANDROID APP'S
+            </ToggleButton>
+          )}
           <Divider />
-          <ToggleButton>MACHINE LEARNING</ToggleButton>
-          <Divider />
+          {toggle === 'machine learning' ? (
+            <ToggleButton active onClick={() => setToggle('machine learning')}>
+              MACHINE LEARNING
+            </ToggleButton>
+          ) : (
+            <ToggleButton onClick={() => setToggle('machine learning')}>
+              MACHINE LEARNING
+            </ToggleButton>
+          )}
         </ToggleGroup>
+
+        <CardContainer>
+          {toggle === 'all' &&
+            projects.map((project) => <ProjectCard project={project} />)}
+          {projects
+            .filter((item) => item.category === toggle)
+            .map((project) => (
+              <ProjectCard project={project} />
+            ))}
+        </CardContainer>
       </Wrapper>
     </Container>
   );

@@ -1,5 +1,4 @@
 import { BrowserRouter as Router } from 'react-router-dom';
-import { Route, Routes } from 'react-router-dom';
 
 import styled, { ThemeProvider } from 'styled-components';
 import { darkTheme } from './utils/Theme';
@@ -45,6 +44,9 @@ function App() {
             <Experience />
           </Wrapper>
           <Projects />
+          <Wrapper>
+            <Education />
+          </Wrapper>
         </Body>
       </Router>
     </ThemeProvider>
