@@ -9,6 +9,8 @@ import Education from './components/Education';
 import Navbar from './components/Navbar';
 import Experience from './components/Experience';
 import Projects from './components/Projects';
+import ContactMe from './components/Contact-Me';
+import Footer from './components/Footer';
 
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
@@ -46,7 +48,10 @@ function App() {
           <Projects />
           <Wrapper>
             <Education />
+            <ContactMe />
           </Wrapper>
+
+          <Footer />
         </Body>
       </Router>
     </ThemeProvider>

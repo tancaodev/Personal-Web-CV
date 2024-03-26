@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-// import { NavLink } from 'react-router-dom';
 import { Link as LinkR } from 'react-router-dom';
 import styled, { useTheme } from 'styled-components';
 
-import { DiCssdeck } from 'react-icons/di';
 import { FaBars } from 'react-icons/fa';
 
 const Nav = styled.div`
@@ -163,16 +161,16 @@ const Navbar = () => {
       <NavContainer>
         <NavLogo to='/'>
           <a
+            href='/'
             style={{
               display: 'flex',
               alignItems: 'center',
               color: 'white',
-              marginBottom: '20px',
+              marginBottom: '10px',
               cursor: 'pointer',
             }}
           >
-            <DiCssdeck size='3rem' />
-            <Span>Portfolio</Span>
+            <Span>{'<TanCaoDev / >'}</Span>
           </a>
         </NavLogo>
         <MobileIcon>

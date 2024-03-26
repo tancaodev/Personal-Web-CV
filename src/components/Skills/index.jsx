@@ -42,7 +42,7 @@ const Description = styled.div`
   color: ${({ theme }) => theme.text_secondary};
 
   @media (max-width: 768px) {
-    font-size: 16px;f
+    font-size: 16px;
   }
 `;
 
